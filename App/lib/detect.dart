@@ -117,11 +117,8 @@ class _PredictState extends State<Predict> {
                         ),
                         child: Text('Capture',
                             style: GoogleFonts.getFont('Didact Gothic',color:Colors.white,fontWeight: FontWeight.bold,fontSize: 24),),
-                        onPressed: () async{
-                          pickimage_camera();
-                          final player = AudioPlayer();
-                          await player.setUrl('https://github.com/omprakashbabu/Segregation-of-Waste-using-Deep-Learning/blob/main/Audios/welcome0.mp3');
-                          player.play();
+                        onPressed: () {
+                         // pickimage_camera();
                         }),
                   ),
                   SizedBox(height: 10),
@@ -137,11 +134,8 @@ class _PredictState extends State<Predict> {
                         ),
                         child: Text('Gallery',
                             style:  GoogleFonts.getFont('Didact Gothic',color:Colors.white,fontWeight: FontWeight.bold,fontSize: 24),),
-                        onPressed: () async{
-                          pickimage_gallery();
-                          final player = AudioPlayer();
-                          await player.setUrl('https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3');
-                          player.play();
+                        onPressed: () {
+                        //  pickimage_gallery();
                         }),
                   ),
                 ],
@@ -169,9 +163,19 @@ class _PredictState extends State<Predict> {
                     height: 10,
                   ),
                   _output != null
-                      ? Text(
-                      'Classified as : ${_output[0]['label'].toString()}',
-                      style: GoogleFonts.getFont('Didact Gothic',color:Colors.black,fontWeight: FontWeight.bold,fontSize: 22),)
+                      ? Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          IconButton(onPressed: () async{
+                            final player = AudioPlayer();
+                            await player.setUrl('asset:///assets/audio${_output[0]['index']}.mp3');
+                            player.play();
+                          }, icon: Icon(Icons.volume_up,size: 30,)),
+                          Text(
+                          'Classified as : ${_output[0]['label'].toString()}',
+                          style: GoogleFonts.getFont('Didact Gothic',color:Colors.black,fontWeight: FontWeight.bold,fontSize: 22),),
+                        ],
+                      )
                       : Text(''),
                   Padding(
                     padding: const EdgeInsets.all(20.0),
