@@ -2,6 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:trash/waste.dart';
+import 'about.dart';
+import 'detect.dart';
+import 'faq.dart';
 import 'home.dart';
 
 void main() {
@@ -48,7 +52,10 @@ class _NavState extends State<Nav> {
     final Size size = MediaQuery.of(context).size;
     final  List<Widget> _pages = <Widget>[
       HomePage(),
-
+      Waste(),
+      Predict(),
+      FAQs(),
+      About(),
     ];
     return Scaffold(
       backgroundColor: Color(0xFFFFFDD0),

@@ -71,7 +71,8 @@ class HomePageState extends State<HomePage> {
               }).toList(),
             ),
           ),
-          Text('The Importance of Waste Segregation -',style: GoogleFonts.didactGothic(fontSize: 28),),
+          SizedBox(height: 20,),
+          Text('The Importance of Waste Segregation -',style: GoogleFonts.didactGothic(fontSize: 28,fontWeight: FontWeight.bold),),
           ListView.builder(
           shrinkWrap: true,
           scrollDirection: Axis.vertical,
@@ -79,14 +80,14 @@ class HomePageState extends State<HomePage> {
           itemCount: 5,
           itemBuilder: (BuildContext context, int index) {
             return Padding(
-              padding: const EdgeInsets.all(4.0),
+              padding: const EdgeInsets.all(8.0),
               child: Container(
                 padding: EdgeInsets.all(0),
-                    child: Text(data[index],style: GoogleFonts.didactGothic(color: Colors.black,fontSize: 20),),
+                    child: index !=1? Text(data[index],style: GoogleFonts.didactGothic(color: Colors.black,fontSize: 20),):Text(data[index],style: GoogleFonts.didactGothic(color: Colors.black,fontSize: 24,fontWeight: FontWeight.bold),),
                   ),
             );
           }),
-          SizedBox(height: 80,),
+          SizedBox(height: 85,),
         ],
       ),
     );
