@@ -117,8 +117,8 @@ class _PredictState extends State<Predict> {
                         ),
                         child: Text('Capture',
                             style: GoogleFonts.getFont('Didact Gothic',color:Colors.white,fontWeight: FontWeight.bold,fontSize: 24),),
-                        onPressed: () {
-                         // pickimage_camera();
+                        onPressed: () async{
+                          pickimage_camera();
                         }),
                   ),
                   SizedBox(height: 10),
@@ -134,8 +134,8 @@ class _PredictState extends State<Predict> {
                         ),
                         child: Text('Gallery',
                             style:  GoogleFonts.getFont('Didact Gothic',color:Colors.white,fontWeight: FontWeight.bold,fontSize: 24),),
-                        onPressed: () {
-                        //  pickimage_gallery();
+                        onPressed: () async{
+                          pickimage_gallery();
                         }),
                   ),
                 ],
